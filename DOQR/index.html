@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="tr" data-supabase-url="https://warsaqcfovasaitcwtxy.supabase.co">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#111936">
+  <meta name="description" content="DOQR digital doorbell">
+  <title>DOQR • Dijital Kapı Zili</title>
+  <link rel="icon" type="image/png" href="./assets/doqr_icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css?v=20260901-1">
+  <link rel="stylesheet" href="./landing.css?v=20261004-1">
+</head>
+<body>
+<script>document.documentElement.dataset.route = new URLSearchParams(location.search).has("qr") ? "visitor" : "marketing";</script>
+  <a class="skip-link" href="#mainContent" data-i18n="skipToContent">İçeriğe geç</a>
+
+  <main id="marketing" class="marketing" aria-labelledby="landingTitle">
+    <a class="marketing-skip" href="#landingTitle" data-copy="skip">İçeriğe geç</a><header class="marketing-header"><a class="marketing-brand" href="./" aria-label="DOQR"><img src="./assets/doqr_icon.png" width="48" height="48" alt=""><strong>DOQR</strong></a><label><span class="sr-only">Dil / Language / Язык</span><select id="marketingLanguage" aria-label="Dil / Language / Язык"><option value="tr">TR</option><option value="en">EN</option><option value="ru">RU</option></select></label></header>
+    <div class="marketing-hero"><div><p class="marketing-kicker" data-copy="kicker">Kapınız için dijital zil</p><h1 id="landingTitle" tabindex="-1" data-copy="title">Bir QR kodu.
+Kapınızla bağlantı.</h1><p class="marketing-lead" data-copy="lead">DOQR ile kapınıza özel bir QR kodu oluşturun. Ziyaretçiniz tarayıcıdan zili çalsın, siz uygulamadan yanıtlayın.</p><a class="button primary store-link" href="https://apps.apple.com/tr/app/doqr/id6800038738" data-copy="download">App Store’dan indirin</a><p class="marketing-note" data-copy="device">Elektronik zil veya ek cihaz gerekmez. İnternet bağlantısı gerekir.</p></div><div class="marketing-story" aria-label="DOQR"><span class="story-number">01</span><h2 data-copy="scan">Tara</h2><p data-copy="scanBody">Kapınızdaki basılı QR kodu.</p><span class="story-number">02</span><h2 data-copy="ring">Zili çal</h2><p data-copy="ringBody">Ziyaretçi uygulama kurmadan tarayıcıdan ulaşır.</p><span class="story-number">03</span><h2 data-copy="reply">Yanıtla</h2><p data-copy="replyBody">Uygulamada ziyaret bildirimini açın ve mesajlaşın.</p></div></div>
+    <div class="marketing-features"><article><h2 data-copy="setup">Kapınıza özel QR</h2><p data-copy="setupBody">Uygulamada dijital zil oluşturun, QR kodunu yazdırın ve kapınıza yerleştirin.</p></article><article><h2 data-copy="visitor">Ziyaretçi için indirme yok</h2><p data-copy="visitorBody">QR kodunu telefon kamerasıyla tarayın ve web sayfasından zili çalın.</p></article><article><h2 data-copy="control">Yanıt sizde</h2><p data-copy="controlBody">Mesajlaşarak yanıtlayın. Pro ile sesli veya görüntülü görüşme için ziyaretçinin onayı istenir.</p></article></div>
+    <aside class="marketing-help"><h2 data-copy="atDoor">Bir kapıyı mı ziyaret ediyorsunuz?</h2><p data-copy="atDoorBody">Kapı sahibine ulaşmak için kapıdaki DOQR kodunu tarayın. Bu tanıtım sayfası bir ziyaret başlatmaz.</p></aside>
+    <footer class="marketing-footer"><span>DOQR</span><nav aria-label="Legal"><a data-legal="privacy" href="./privacy.html" data-copy="privacy">Gizlilik</a><a data-legal="terms" href="./terms.html" data-copy="terms">Kullanım koşulları</a><a data-legal="support" href="./support.html" data-copy="support">Destek</a><a data-legal="account-deletion" href="./account-deletion.html" data-copy="deletion">Hesap silme</a></nav></footer>
+  </main>
+  <main id="mainContent" class="shell">
+    <header class="brand">
+      <img src="./assets/doqr_icon.png" width="48" height="48" alt="DOQR">
+      <div class="brand-copy"><strong>DOQR</strong><span data-i18n="brandTagline">Dijital Zil</span></div>
+      <div class="header-tools">
+        <label class="language-control"><span class="sr-only">Dil / Language / Язык</span><select id="languageSelect" aria-label="Dil / Language / Язык"><option value="tr">TR</option><option value="en">EN</option><option value="ru">RU</option></select></label>
+        <span class="secure-badge"><span aria-hidden="true">⌁</span><span data-i18n="encryptedConnection">Şifreli bağlantı</span></span>
+      </div>
+    </header>
+
+    <section id="loadingView" class="card hero-card view active" aria-live="polite"><div class="loader" aria-hidden="true"></div><h1 data-i18n="loadingTitle">Dijital zil hazırlanıyor</h1><p data-i18n="loadingBody">QR kodu ve bağlantı doğrulanıyor.</p></section>
+
+    <section id="errorView" class="card view state-card" role="alert"><div class="state-icon danger" aria-hidden="true">!</div><h1 data-i18n="errorTitle">Bağlantı kurulamadı</h1><p id="errorText" data-i18n="errorDefault">QR kodunu yeniden tarayıp tekrar deneyin.</p><button id="retryBtn" class="button secondary" type="button" data-i18n="retry">Tekrar dene</button></section>
+
+    <section id="consentView" class="card view" aria-labelledby="consentTitle">
+      <span class="eyebrow" data-i18n="consentEyebrow">Gizlilik ve güvenlik</span><h1 id="consentTitle" data-i18n="consentTitle">Zili çalmadan önce</h1><p class="lead" data-i18n="consentLead">Kısa süreli ziyaretçi oturumunun nasıl çalıştığını özetledik.</p>
+      <div class="notice concise-notice"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v5c0 5.2-3.4 8.4-8 10-4.6-1.6-8-4.8-8-10V6l8-3z"/></svg><span data-i18n="consentSummary">Kötüye kullanımı önlemek için sınırlı cihaz ve güvenlik verileri işlenir.</span></div>
+      <details class="privacy-details"><summary data-i18n="detailsShow">İşlenen verilerin ayrıntılarını göster</summary><ul class="privacy-list">
+        <li><span>01</span><div><strong data-i18n="deviceTitle">Cihaz ve tarayıcı bilgileri</strong><small data-i18n="deviceBody">Platform, dil, saat dilimi, ekran ölçüsü ve temel cihaz kapasitesi.</small></div></li>
+        <li><span>02</span><div><strong data-i18n="securityTitle">Güvenlik tanımlayıcıları</strong><small data-i18n="securityBody">Yerel rastgele cihaz anahtarı ve güvenlik özetleri.</small></div></li>
+        <li><span>03</span><div><strong data-i18n="recordsTitle">Zil ve mesaj kayıtları</strong><small data-i18n="recordsBody">Free planda son 3 ziyaret; Pro planda en fazla 90 gün.</small></div></li>
+        <li><span>04</span><div><strong data-i18n="liveTitle">Canlı ses ve görüntü</strong><small data-i18n="liveBody">Onayınız olmadan başlamaz ve DOQR tarafından kaydedilmez.</small></div></li>
+      </ul></details>
+      <label class="check-row"><input id="consentCheck" type="checkbox"><span data-i18n="consentLabel">Bilgilendirmeyi okudum ve ziyaretçi oturumunun oluşturulmasını kabul ediyorum.</span></label>
+      <div id="turnstile"></div>
+      <button id="continueBtn" class="button primary" type="button" disabled><span data-i18n="continue">Devam et</span><span aria-hidden="true">→</span></button>
+      <p class="micro"><span data-i18n="privacyPrefix">Ayrıntılar için</span> <a id="privacyLink" href="./privacy.html" target="_blank" rel="noopener" data-i18n="privacyLink">Gizlilik Bildirimi</a> <span data-i18n="privacySuffix">sayfasını inceleyin.</span></p>
+    </section>
+
+    <section id="setupView" class="card view" aria-labelledby="doorLabel">
+      <div class="door-heading"><div class="door-symbol" aria-hidden="true"></div><div><span class="eyebrow" data-i18n="digitalBell">Dijital zil</span><h1 id="doorLabel" data-i18n="doorDefault">Kapı</h1></div></div><p id="welcomeMessage" class="lead"></p>
+      <div class="field-group"><label for="visitorAlias"><span data-i18n="name">Adınız</span> <em id="nameOptional"></em></label><input id="visitorAlias" maxlength="80" autocomplete="name" data-i18n-placeholder="namePlaceholder" placeholder="Size nasıl hitap edelim?"></div>
+      <div class="field-group"><span class="field-label" data-i18n="visitType">Ziyaret türü</span><div class="segmented" id="visitorKinds" role="group"><button type="button" data-kind="guest" class="selected" aria-pressed="true" data-i18n="visitor">Ziyaretçi</button><button type="button" data-kind="courier" aria-pressed="false" data-i18n="courier">Kuryeyim</button><button type="button" data-kind="other" aria-pressed="false" data-i18n="other">Diğer</button></div></div>
+      <div id="courierFields" class="field-group hidden"><label for="courierSelect" data-i18n="courierCompany">Kurye şirketi</label><select id="courierSelect"><option value="" data-i18n="selectCompany">Şirket seçin</option></select><p class="field-note" data-i18n="courierNote">Bu seçim kendi beyanınızdır.</p></div>
+      <p id="setupError" class="inline-error hidden" role="alert"></p><button id="ringBtn" class="button primary" type="button"><span data-i18n="ring">Zili çal</span><span aria-hidden="true">→</span></button>
+    </section>
+
+    <section id="sessionView" class="view session-view">
+      <div class="card session-status"><div id="pulse" class="ring-pulse" aria-hidden="true"><span></span></div><div><span id="sessionEyebrow" class="eyebrow" data-i18n="ringEyebrow">Zil çalıyor</span><h1 id="sessionTitle" data-i18n="ownerWaiting">Kapı sahibi bekleniyor</h1><p id="sessionSubtitle" data-i18n="keepOpen">Lütfen bu sayfayı açık tutun.</p></div><button id="cancelBtn" type="button" class="icon-button" data-i18n-aria="cancel" aria-label="İptal et">×</button></div>
+      <p id="sessionNotice" class="inline-error hidden" role="alert"></p><button id="ringAgainBtn" class="button secondary hidden" type="button"><span data-i18n="ringAgain">Zili tekrar çal</span><span aria-hidden="true">↻</span></button>
+      <div id="mediaCard" class="card media-card hidden"><video id="remoteVideo" autoplay playsinline></video><video id="localVideo" autoplay muted playsinline></video><span id="mediaLimitLabel" class="media-limit hidden"></span><div id="audioState" class="audio-state hidden"><div class="audio-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><strong data-i18n="audioCall">Sesli görüşme</strong><span id="connectionLabel" data-i18n="connecting">Bağlanıyor…</span></div><div class="media-controls"><button id="muteBtn" type="button" aria-pressed="false" data-i18n-aria="mute" aria-label="Mikrofonu kapat"><span aria-hidden="true">●</span></button><button id="cameraBtn" type="button" aria-pressed="false" data-i18n-aria="cameraOff" aria-label="Kamerayı kapat"><span aria-hidden="true">▣</span></button><button id="hangupBtn" class="hangup" type="button" data-i18n-aria="hangup" aria-label="Görüşmeyi bitir"><span aria-hidden="true">⌕</span></button></div></div>
+      <div id="mediaRequestCard" class="card media-request hidden"><span class="eyebrow" data-i18n="callRequest">Görüşme isteği</span><h2 id="mediaRequestTitle"></h2><p id="mediaRequestText"></p><div class="media-request-actions"><button id="declineMediaBtn" class="button secondary" type="button" data-i18n="continueChat">Mesajlaşmaya devam et</button><button id="acceptMediaBtn" class="button primary" type="button" data-i18n="accept">Kabul et</button></div></div>
+      <div id="chatCard" class="card chat-card"><div class="chat-head"><div><span class="eyebrow" data-i18n="liveConversation">Canlı görüşme</span><strong data-i18n="messages">Mesajlar</strong></div><span id="onlineDot" class="online-dot offline" aria-hidden="true"></span></div><div id="messages" class="messages" aria-live="polite"><p class="empty-chat" data-i18n="noMessages">Henüz mesaj yok.</p></div><form id="messageForm" class="composer"><label class="sr-only" for="messageInput" data-i18n="messagePlaceholder">Mesaj yazın…</label><input id="messageInput" maxlength="2000" autocomplete="off" data-i18n-placeholder="messagePlaceholder" placeholder="Mesaj yazın…"><button type="submit" data-i18n-aria="send" aria-label="Gönder">↑</button></form></div>
+    </section>
+  </main>
+  <footer><span data-i18n="footer">DOQR • Donanımsız, hızlı ve güvenli dijital zil</span><br><a class="download-cta" href="https://apps.apple.com/tr/app/doqr/id6800038738" id="visitorDownload" target="_blank" rel="noopener"><span data-i18n="download">Kendi kapınızı dijitalleştirin — DOQR uygulamasını indirin</span> →</a></footer>
+  <script type="module" src="./entry.js?v=20261004-1"></script>
+</body>
+</html>
